@@ -4,8 +4,52 @@ A harness for comparing search APIs as the retrieval tool behind an internal res
 
 ## Question sets
 
-- **bench1**: 98 questions written for the fund's teams (investing, legal and compliance, tax and HR, tech), including point-in-time variants. See `gold/gold_set.jsonl` and `gold/TAXONOMY.md`.
-- **bench2**: 104 questions from public benchmarks plus recent 8-K executive changes: FinSearchComp T2 and T3, Linkup's GTM funding set, and EDGAR 8-Ks. See `docs/BENCH2.md`.
+### bench1: built by hand for this fund
+
+98 questions written from scratch around how each team at the fund would use search. Nothing comes from a public benchmark.
+
+- Questions are organised by persona and by usage pattern (tables below). The full taxonomy is in `gold/TAXONOMY.md`.
+- Each question has a gold answer written for it, the required facts an answer must contain, acceptable variants, the gold sources and an as-of date. Answers were checked against primary sources (EDGAR, regulator sites, court dockets, vendor release notes).
+- 81 questions were drafted and verified with AI-assisted research. The other 17 are hard questions that AI search couldn't settle. Those were researched manually from primary sources, without any AI search tools, following the rules in `gold/HARD_QUESTIONS.md`.
+- Some questions have traps: stale facts, contested facts, events that never happened, look-alike names, paywalled or premium sources. 11 point-in-time variants ask the same question as of a past date.
+- 16 questions form a dev split used for tuning `linkup-tuned`. The rest are test.
+- The set is defined in `scripts/build_gold.py`, written to `gold/gold_set.jsonl` and checked with `scripts/validate_gold.py`.
+
+Personas:
+
+| Persona | Sub-teams | Questions | Typical questions |
+|---|---|---|---|
+| Investing | private markets, credit, distressed, macro | 46 | Deal and restructuring news, rating actions, court dockets, fund and company facts |
+| Legal and compliance | compliance, legal, risk | 21 | Rules and deadlines from primary sources, enforcement actions, sanctions, rulings |
+| Tech and engineering | platform, security, data | 17 | Versions, changelogs, CVEs, API limits, vendor security |
+| Tax and HR | HR, tax | 14 | IRS and state guidance, annual limits, employment-law changes |
+
+Usage patterns:
+
+| Pattern | Questions | What a good answer does |
+|---|---|---|
+| News and freshness | 29 | Finds the recent event with the right date, not an older one |
+| Official source | 28 | Grounds the answer in a primary source (sec.gov, irs.gov, federalregister.gov, dockets, company IR) |
+| Entity lookup | 16 | Gets a fact about a specific company, person or security, and tells look-alike names apart |
+| Multi-hop | 14 | Combines two or more retrieved facts correctly |
+| Technical docs | 11 | Gives the exact version, limit or date from vendor docs, release notes or a CVE record |
+
+13 questions also mirror automated workflows: news briefings (6), CRM enrichment (5) and sourcing signal checks (2).
+
+### bench2: assembled from public sources
+
+104 questions taken from existing benchmarks, picked for the parts that match the fund's work. It tests Linkup on benchmarks it publishes itself. All rows are test split.
+
+| Slice | Rows | Source | Gold |
+|---|---|---|---|
+| Financial statement and macro figures | 40 | FinSearchComp T2, seeded sample | FinSearchComp's answers |
+| Multi-year calculations from filings | 14 | FinSearchComp T3 (company-filing questions only) | FinSearchComp's answers |
+| Private-company total funding | 30 | Linkup's GTM funding set, seeded sample | Crunchbase total, correct within ±25% |
+| 8-K executive changes (CEO, CFO, GC) | 20 | SEC 8-K filings, Oct 12 to Nov 20, 2026 | The 8-K itself |
+
+bench2 is investing-heavy by design: credit analysts (60 questions), private markets associates (30), macro analysts (12) and in-house counsel (2). The four slices are also its four question types in the scorecards: P1 is 8-K executive changes, P2 statement and macro figures, P3 funding totals and P4 multi-year calculations.
+
+The set is built by `scripts/build_bench2.py`. Sources, licences and what was left out are listed in `gold/bench2/sources/README.md`, and design notes are in `docs/BENCH2.md`.
 
 ## Arms
 
@@ -45,6 +89,28 @@ bench2 has been run for retrieval but not graded yet. Its scorecard measures whe
 | linkup-rewritten | 47 / 104 | 19 | 28 |
 
 Perplexity returned pages that republish the benchmark's own answers (FinSearchComp copies on Hugging Face) on 41 bench2 questions. Those results are removed before scoring.
+
+## Where Linkup does better and worse
+
+Better or level:
+
+- Technical docs and multi-hop questions on bench1: `linkup-standard` got all 11 tech-doc and all 14 multi-hop questions right, level with both competitors.
+- 8-K executive changes on bench2: `linkup-standard`, `linkup-fast`, `linkup-deep` and `linkup-tuned` each found the evidence on 18 of 20, level with Perplexity (17) and Parallel (19).
+- Clean results: Linkup never returned a page republishing the benchmark's answers. Perplexity did on 41 bench2 questions.
+- Above chance on bench2, `linkup-deep` (51) is ahead of Perplexity (44), though behind Parallel (58).
+- One point-in-time question on bench1 (INV-H01-PIT) was answered only by `linkup-deep` and `linkup-tuned`.
+- Primary sources: `linkup-rewritten` reached the gold source most often of any arm on bench2 (33 of 50).
+
+Worse:
+
+- Overall on bench1, Linkup gets 88 to 89 of 98 against 95 for Perplexity and Parallel. In head-to-head pairs `linkup-standard` was right only where a competitor was also right, while each competitor was right on 7 questions where Linkup wasn't.
+- Questions whose answer is that something doesn't exist: "no claims bar date has been set" (INV-H04), "the deal has no go-shop" (INV-H08). Linkup's results led to "couldn't find it" instead of confirming the absence.
+- Premium or ratings content: on S&P's downgrade of Mercer (INV-H06), `linkup-standard` and `linkup-deep` didn't find it and `linkup-tuned` found it without the date. Both competitors got it fully.
+- Official-source questions on bench1: 24 of 28 for `linkup-standard` against 27 for each competitor.
+- Financial statement lookups on bench2: Linkup arms found the number on 21 to 23 of 40, Parallel on 31.
+- `linkup-tuned` scored lowest on bench1 (82). It restricts legal and tax searches to allowlisted domains, and legal and compliance fell to 14 of 21. Most of those misses say the results didn't contain the fact, which points to the allowlist cutting out the pages that had it.
+- Rewriting queries to name the source document hurt on bench2 (`linkup-rewritten`, 8 of 40 statement lookups). The rewrite pulled up 10-K cover pages and Crunchbase paywall pages instead of pages showing the figure.
+- Speed and metadata: `linkup-deep` takes about 7 to 8 seconds per search at 10 times the standard price, and returns no publish dates.
 
 Full scorecards are in `results/`. Only the bench2 scorecard (`results/20261124-222222-bench2-all-retrieval/`) uses the current retrieval scoring. The older retrieval scorecards were built before that change and aren't directly comparable with it.
 
