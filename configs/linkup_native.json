@@ -1,0 +1,10 @@
+{
+  "_comment": "linkup-native arm: the agent picks depth, dates and domains per search via the linkup_search tool (see LINKUP_TOOL / LINKUP_GUIDE in scripts/run_eval.py). depth = fallback if the agent omits it. teams.<team>.prioritize_domains = soft defaults merged into every standard/deep search for that team (the fund knows the user's team from their login; no gold labels are read). Tune on dev only, then freeze before --split test.",
+  "depth": "standard",
+  "teams": {
+    "legal_rc": {"prioritize_domains": ["sec.gov", "federalregister.gov", "cftc.gov", "finra.org", "eur-lex.europa.eu", "courtlistener.com"]},
+    "tax_hr": {"prioritize_domains": ["irs.gov", "ssa.gov", "dol.gov", "uscis.gov", "tax.ny.gov", "congress.gov"]},
+    "invest": {},
+    "tech": {}
+  }
+}

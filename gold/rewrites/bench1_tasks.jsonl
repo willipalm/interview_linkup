@@ -1,0 +1,98 @@
+{"id": "TECH-02", "team": "tech", "question": "Is Python 3.10 still getting security patches? we have a few services on it"}
+{"id": "TECH-03", "team": "tech", "question": "node 26 LTS codename and when does it go EOL"}
+{"id": "TECH-04", "team": "tech", "question": "what's the newest kubernetes minor release"}
+{"id": "TECH-06", "team": "tech", "question": "CVE-2026-76466 fixed version"}
+{"id": "TECH-07", "team": "tech", "question": "our expressway cluster is still on X14 — is there a patch for the hard-coded creds CVE cisa just added to KEV?"}
+{"id": "TECH-08", "team": "tech", "question": "the openssh bug cisa put in KEV this month — which setups are actually affected?"}
+{"id": "TECH-10", "team": "tech", "question": "which vendors were in the CISA KEV batch on Nov 20 2026"}
+{"id": "TECH-11", "team": "tech", "question": "can we still build on the openai assistants api or do we need to migrate"}
+{"id": "TECH-12", "team": "tech", "question": "is postgres 19 GA yet? when did it ship"}
+{"id": "TECH-13", "team": "tech", "question": "postgres 19 headline features for ops"}
+{"id": "TECH-14", "team": "tech", "question": "root cause of the big aws us-east-1 outage in october 2025"}
+{"id": "TECH-16", "team": "tech", "question": "why did python 3.15 slip from its oct 1 date"}
+{"id": "LRC-01", "team": "legal_rc", "question": "Form PF amendments compliance date — still Oct 1 2026?"}
+{"id": "LRC-02", "team": "legal_rc", "question": "when does the fincen AML program rule for investment advisers kick in"}
+{"id": "LRC-03", "team": "legal_rc", "question": "EU AI Act high-risk obligations — when do they apply now after the omnibus?"}
+{"id": "LRC-04", "team": "legal_rc", "question": "treasury clearing mandate compliance dates cash vs repo"}
+{"id": "LRC-05", "team": "legal_rc", "question": "SEC FY2026 enforcement stats — how many standalone actions"}
+{"id": "LRC-06", "team": "legal_rc", "question": "OFAC Prince Group designations nov 2026 — how many individuals / companies"}
+{"id": "LRC-07", "team": "legal_rc", "question": "Nov 4 2026 OFAC action on iran shadow fleet — what network and how many designated"}
+{"id": "LRC-09", "team": "legal_rc", "question": "who runs SEC enforcement right now"}
+{"id": "LRC-10", "team": "legal_rc", "question": "current CFTC chair"}
+{"id": "LRC-11", "team": "legal_rc", "question": "we're an RIA with ~$40bn AUM — when did the reg S-P amendments start applying to us"}
+{"id": "LRC-12", "team": "legal_rc", "question": "effective date of the SEC predictive data analytics conflicts rule for advisers"}
+{"id": "LRC-13", "team": "legal_rc", "question": "tornetta v musk delaware supreme court outcome + what happened to the fee award"}
+{"id": "LRC-15", "team": "legal_rc", "question": "HSR filing fee for a $700m deal under the 2026 schedule"}
+{"id": "LRC-17", "team": "legal_rc", "question": "aifmd ii transposition deadline and leverage caps for loan-originating AIFs"}
+{"id": "TAX-01", "team": "tax_hr", "question": "2027 401k employee deferral limit and catch-up"}
+{"id": "TAX-03", "team": "tax_hr", "question": "2027 HSA limits self-only and family"}
+{"id": "TAX-05", "team": "tax_hr", "question": "2027 standard deduction married filing jointly"}
+{"id": "TAX-07", "team": "tax_hr", "question": "what will the NYC minimum wage be on jan 1 2027"}
+{"id": "TAX-08", "team": "tax_hr", "question": "pillar two side-by-side — are US-parented groups out of IIR/UTPR and does QDMTT still bite?"}
+{"id": "TAX-09", "team": "tax_hr", "question": "is the $100k H-1B fee still in effect? any court rulings"}
+{"id": "TAX-10", "team": "tax_hr", "question": "SALT cap for 2027"}
+{"id": "TAX-11", "team": "tax_hr", "question": "employee turning 61 in 2027 — max they can defer into the 401k incl. catch-up?"}
+{"id": "TAX-12", "team": "tax_hr", "question": "max employee social security tax 2027"}
+{"id": "TAX-13", "team": "tax_hr", "question": "2027 social security COLA"}
+{"id": "INV-01", "team": "invest", "question": "children's place ch 11 — which court, case number, petition date?"}
+{"id": "INV-02", "team": "invest", "question": "childrens place bankruptcy claims agent and bid deadline"}
+{"id": "INV-03", "team": "invest", "question": "karyopharm chapter 11 venue and who's the merger partner"}
+{"id": "INV-04", "team": "invest", "question": "KPTI equity recovery under the plan?"}
+{"id": "INV-05", "team": "invest", "question": "mercer international prepack terms — new money and noteholder support"}
+{"id": "INV-06", "team": "invest", "question": "did mercer file for bankruptcy?"}
+{"id": "INV-07", "team": "invest", "question": "gemspring fund IV final size"}
+{"id": "INV-08", "team": "invest", "question": "advent GPE XI size vs GPE X"}
+{"id": "INV-09", "team": "invest", "question": "who's nvidia's ceo right now"}
+{"id": "INV-10", "team": "invest", "question": "nvda Q3 FY27 revenue, data center rev, and Q4 guide"}
+{"id": "INV-11", "team": "invest", "question": "moody's action on nvidia this month?"}
+{"id": "INV-13", "team": "invest", "question": "what did the fed do in september 2026"}
+{"id": "INV-14", "team": "invest", "question": "october 2026 CPI year over year headline"}
+{"id": "INV-16", "team": "invest", "question": "when's the next CPI print"}
+{"id": "INV-18", "team": "invest", "question": "BX vs APO AUM at Q3 2026 — who's bigger and by roughly how much"}
+{"id": "INV-19", "team": "invest", "question": "why did apollo post a GAAP loss in 3Q26"}
+{"id": "INV-20", "team": "invest", "question": "who's buying perion and at what price"}
+{"id": "INV-21", "team": "invest", "question": "bumble take private price per share"}
+{"id": "INV-23", "team": "invest", "question": "who was gemspring's fund counsel on fund IV"}
+{"id": "LRC-19", "team": "legal_rc", "question": "can states still block kalshi sports contracts? where do the courts stand"}
+{"id": "INV-25", "team": "invest", "question": "after the supreme court ruling can trump fire fed governors?"}
+{"id": "INV-26", "team": "invest", "question": "is the fed going to hike in december?"}
+{"id": "INV-27", "team": "invest", "question": "is the SEC investigating nvidia? what's it about"}
+{"id": "INV-28", "team": "invest", "question": "crwd zscaler deal terms?"}
+{"id": "INV-29", "team": "invest", "question": "who's buying BILL and at what price"}
+{"id": "LRC-20", "team": "legal_rc", "question": "what did OFAC designate on nov 19"}
+{"id": "INV-31", "team": "invest", "question": "model ml series b — how much, who led, valuation?"}
+{"id": "INV-32", "team": "invest", "question": "has stripe filed for its IPO yet? latest valuation mark"}
+{"id": "INV-33", "team": "invest", "question": "mercury: last round, valuation, lead investor"}
+{"id": "INV-34", "team": "invest", "question": "ramp.com — latest round size, lead, valuation, total raised"}
+{"id": "INV-35", "team": "invest", "question": "brex — still independent? who owns it and who's ceo"}
+{"id": "INV-36", "team": "invest", "question": "chime q3 revenue and did they raise the full year guide"}
+{"id": "INV-37", "team": "invest", "question": "western union intermex deal — is it dead?"}
+{"id": "LRC-21", "team": "legal_rc", "question": "coinbase OCC trust charter — final approval or still conditional?"}
+{"id": "LRC-22", "team": "legal_rc", "question": "1033 open banking rule — are the compliance dates still live?"}
+{"id": "TECH-11-PIT", "team": "tech", "question": "can we still build on the openai assistants api or do we need to migrate"}
+{"id": "TECH-12-PIT", "team": "tech", "question": "latest postgres major version?"}
+{"id": "LRC-01-PIT", "team": "legal_rc", "question": "Form PF amendments compliance date?"}
+{"id": "INV-18-PIT", "team": "invest", "question": "BX vs APO total AUM — latest numbers, who's bigger and by how much"}
+{"id": "LRC-09-PIT", "team": "legal_rc", "question": "who runs SEC enforcement right now"}
+{"id": "TAX-07-PIT", "team": "tax_hr", "question": "what's the NYC minimum wage"}
+{"id": "INV-09-PIT", "team": "invest", "question": "who's nvidia's ceo right now"}
+{"id": "INV-09-PIT2", "team": "invest", "question": "who's nvidia's ceo right now"}
+{"id": "INV-35-PIT", "team": "invest", "question": "brex — still independent? who owns it"}
+{"id": "INV-13-PIT", "team": "invest", "question": "what did the fed do at its last meeting"}
+{"id": "INV-H01-PIT", "team": "invest", "question": "did moodys cut hertz to caa1?"}
+{"id": "INV-H01", "team": "invest", "question": "did moodys cut hertz to caa1?"}
+{"id": "INV-H02", "team": "invest", "question": "karyopharm DIP size?"}
+{"id": "INV-H03", "team": "invest", "question": "which judge has the children's place ch 11"}
+{"id": "INV-H04", "team": "invest", "question": "whats the claims bar date in karyopharm"}
+{"id": "INV-H05", "team": "invest", "question": "karyopharm DIP pricing - spread, fees, who's in the lender group"}
+{"id": "INV-H06", "team": "invest", "question": "what's S&P's rating on mercer international after the prepack filing"}
+{"id": "INV-H07", "team": "invest", "question": "which judge is on the mercer prepack"}
+{"id": "INV-H08", "team": "invest", "question": "BILL take-private — termination fee and when does the go-shop end"}
+{"id": "INV-H09", "team": "invest", "question": "mercury (the startup bank) — who's the CFO?"}
+{"id": "TECH-H01", "team": "tech", "question": "did SQL/PGQ actually ship in postgres 19 or did it get reverted"}
+{"id": "TECH-H02", "team": "tech", "question": "cisa added the expressway hard-coded creds bug to KEV — has cisco confirmed exploitation?"}
+{"id": "TECH-H03", "team": "tech", "question": "how many CVEs did microsoft fix in november 2026 patch tuesday"}
+{"id": "LRC-H01", "team": "legal_rc", "question": "how many follow-on proceedings did the SEC bring in FY2026"}
+{"id": "TAX-H01", "team": "tax_hr", "question": "can we file new H-1B petitions right now without paying the $100k fee?"}
+{"id": "TAX-H02", "team": "tax_hr", "question": "NY state return — do we add back the federal no-tax-on-overtime deduction for 2026?"}
+{"id": "TAX-H03", "team": "tax_hr", "question": "which states decoupled from the federal 100% bonus depreciation for 2026"}

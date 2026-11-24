@@ -1,0 +1,6 @@
+{
+  "_comment": "Research arms. They run only on research rows (finance and multi-hop questions; see is_research in scripts/retrieval_run.py), the same rows for all three vendors, and are reported separately in research_scorecard.md. Tiers: Linkup XL and Parallel ultra are the configurations Linkup used for its published FinSearchComp numbers; Perplexity xhigh is the level Perplexity's docs recommend for deep research and the only one that includes its finance_search tool. List prices per question: Linkup XL $2.50, Parallel ultra $0.30, Perplexity metered (tokens + tool calls). To compare at similar spend, try parallel processor ultra8x ($2.40) or linkup reasoningDepth L ($1.50).",
+  "linkup-research": {"backend": "linkup", "research": true, "mode": "answer", "reasoningDepth": "XL"},
+  "parallel-research": {"backend": "parallel", "research": true, "processor": "ultra"},
+  "perplexity-research": {"backend": "perplexity", "research": true, "effort": "xhigh"}
+}

@@ -1,0 +1,48 @@
+{
+  "_comment": "Starting point for the linkup-tuned arm. Tune on the dev split ONLY, then freeze before running --split test. Keys: depth (arm default), exclude_domains (all teams), teams.<team>.{depth, include_domains, exclude_domains}. include_domains is a HARD filter: answers outside the list disappear, so check coverage loss.",
+  "depth": "standard",
+  "exclude_domains": [],
+  "teams": {
+    "legal_rc": {
+      "depth": "deep",
+      "include_domains": [
+        "sec.gov",
+        "cftc.gov",
+        "finra.org",
+        "federalregister.gov",
+        "fincen.gov",
+        "ftc.gov",
+        "treasury.gov",
+        "ofac.treasury.gov",
+        "home.treasury.gov",
+        "eur-lex.europa.eu",
+        "europarl.europa.eu",
+        "esma.europa.eu",
+        "dfs.ny.gov",
+        "courts.delaware.gov",
+        "uscourts.gov",
+        "supremecourt.gov",
+        "courtlistener.com"
+      ]
+    },
+    "tax_hr": {
+      "include_domains": [
+        "irs.gov",
+        "ssa.gov",
+        "dol.gov",
+        "uscis.gov",
+        "ny.gov",
+        "dol.ny.gov",
+        "governor.ny.gov",
+        "tax.ny.gov",
+        "oecd.org",
+        "federalregister.gov",
+        "congress.gov"
+      ]
+    },
+    "invest": {
+      "depth": "deep"
+    },
+    "tech": {}
+  }
+}
